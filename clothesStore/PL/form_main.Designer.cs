@@ -744,7 +744,7 @@
             // 
             // txt_idLogin
             // 
-            this.txt_idLogin.Location = new System.Drawing.Point(444, 68);
+            this.txt_idLogin.Location = new System.Drawing.Point(625, 55);
             this.txt_idLogin.Multiline = true;
             this.txt_idLogin.Name = "txt_idLogin";
             this.txt_idLogin.Size = new System.Drawing.Size(181, 47);
@@ -756,7 +756,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.7324F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.2676F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 219F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button7, 2, 0);
@@ -778,9 +778,9 @@
             this.button1.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(223, 122);
+            this.button1.Location = new System.Drawing.Point(224, 122);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 131);
+            this.button1.Size = new System.Drawing.Size(165, 131);
             this.button1.TabIndex = 16;
             this.button1.Text = "مرتجع شراء";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -808,7 +808,7 @@
             this.button7.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.Black;
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(14, 3);
+            this.button7.Location = new System.Drawing.Point(15, 3);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(203, 113);
             this.button7.TabIndex = 15;
@@ -824,9 +824,9 @@
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.Location = new System.Drawing.Point(223, 3);
+            this.button3.Location = new System.Drawing.Point(224, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(166, 113);
+            this.button3.Size = new System.Drawing.Size(165, 113);
             this.button3.TabIndex = 2;
             this.button3.Text = "فاتورة مشتريات ";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -855,7 +855,7 @@
             this.button6.Font = new System.Drawing.Font("AL-Mateen", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.button6.ForeColor = System.Drawing.Color.Black;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(14, 122);
+            this.button6.Location = new System.Drawing.Point(15, 122);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(203, 131);
             this.button6.TabIndex = 8;
