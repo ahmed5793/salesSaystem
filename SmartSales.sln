@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSales", "clothesStore\SmartSales.csproj", "{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x100 = Debug|x100
+		Debug66|Any CPU = Debug66|Any CPU
+		Debug66|x100 = Debug66|x100
+		Debug77|Any CPU = Debug77|Any CPU
+		Debug77|x100 = Debug77|x100
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}.Debug|x100.ActiveCfg = Debug|Any CPU
+		{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}.Debug|x100.Build.0 = Debug|Any CPU
+		{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}.Debug66|Any CPU.ActiveCfg = Debug66|Any CPU
+		{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}.Debug66|Any CPU.Build.0 = Debug66|Any CPU
+		{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}.Debug66|x100.ActiveCfg = Debug66|Any CPU
+		{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}.Debug66|x100.Build.0 = Debug66|Any CPU
+		{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}.Debug77|Any CPU.ActiveCfg = Debug77|Any CPU
+		{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}.Debug77|Any CPU.Build.0 = Debug77|Any CPU
+		{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}.Debug77|x100.ActiveCfg = Debug77|Any CPU
+		{6DD6ADCF-B6B0-48D4-8DD4-85DD56046D03}.Debug77|x100.Build.0 = Debug77|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44A95B3E-61CC-4500-976D-99B76096AAF9}
+	EndGlobalSection
+EndGlobal

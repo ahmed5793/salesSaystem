@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System">
+      <section name="DevExpress.LookAndFeel.Design.AppSettings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false"/>
+    </sectionGroup>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="clothesStore.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false"/>
+    </sectionGroup>
+  </configSections>
+  <connectionStrings>
+    <add name="localhost_FEEDStore_Connection" connectionString="XpoProvider=MSSqlServer;data source=.;integrated security=SSPI;initial catalog=FEEDStore"/>
+  </connectionStrings>
+  <applicationSettings>
+    <DevExpress.LookAndFeel.Design.AppSettings>
+      <setting name="DefaultAppSkin" serializeAs="String">
+        <value></value>
+      </setting>
+      <setting name="DefaultPalette" serializeAs="String">
+        <value></value>
+      </setting>
+      <setting name="TouchUI" serializeAs="String">
+        <value></value>
+      </setting>
+      <setting name="CompactUI" serializeAs="String">
+        <value></value>
+      </setting>
+      <setting name="TouchScaleFactor" serializeAs="String">
+        <value></value>
+      </setting>
+      <setting name="DirectX" serializeAs="String">
+        <value></value>
+      </setting>
+      <setting name="RegisterUserSkins" serializeAs="String">
+        <value></value>
+      </setting>
+      <setting name="RegisterBonusSkins" serializeAs="String">
+        <value></value>
+      </setting>
+      <setting name="FontBehavior" serializeAs="String">
+        <value></value>
+      </setting>
+      <setting name="DefaultAppFont" serializeAs="String">
+        <value></value>
+      </setting>
+      <setting name="DPIAwarenessMode" serializeAs="String">
+        <value></value>
+      </setting>
+      <setting name="CustomPaletteCollection" serializeAs="Xml">
+        <value/>
+      </setting>
+    </DevExpress.LookAndFeel.Design.AppSettings>
+  </applicationSettings>
+  <startup useLegacyV2RuntimeActivationPolicy="true">
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6"/>
+  </startup>
+  <userSettings>
+    <clothesStore.Properties.Settings>
+      <setting name="PrinterName" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="PrintBarcode" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="ProudectKey" serializeAs="String">
+        <value>NO</value>
+      </setting>
+      <setting name="BarcodeSize" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="Text_Barcode" serializeAs="String">
+        <value>Name compay</value>
+      </setting>
+    </clothesStore.Properties.Settings>
+  </userSettings>
+</configuration>
