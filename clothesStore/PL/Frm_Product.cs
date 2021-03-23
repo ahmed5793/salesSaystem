@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using clothesStore.Bl;
+using DevExpress.XtraGrid.Views.Grid;
+
 namespace clothesStore.PL
 {
     public partial class Frm_Product : DevExpress.XtraEditors.XtraForm
@@ -55,34 +57,14 @@ namespace clothesStore.PL
         }
         public Frm_Product()
         {
-            InitializeComponent();
-
-            //CrateBarcode();
-            //label5.Hide();
-          //  Txt_Barcode.Enabled=false;
-            //simpleButton2.Hide();
-            //Btn_PrintBarcode.Hide();
-            Btn_Delete.Hide();
-            gridControl1.DataSource = P.selectProudect();
-            //gridView1.Columns[8].Visible = false;
-            //dataGridViewPR.Columns[6].Visible = false;
-            //dataGridViewPR.Columns[10].Visible = false;
-            //dataGridViewPR.Columns[12].Visible = false;
+            InitializeComponent();         
+            gridControl1.DataSource = P.selectProudect();           
             ComboCategory();
-            //ComboLargeUnit();
-            //ComboSmallUnit();
-            //Combo_Store();
+     
             btn_Update.Enabled = false;
-            Btn_Delete.Enabled = false;
+           // Btn_Delete.Enabled = false;
         }
-        //void SelectdataTable()
-        //{
-        //    dt2.Columns.Add("رقم المخزن");//0
-        //    dt2.Columns.Add("اسم المخزن");//1
-        //    dt2.Columns.Add("الكمية");//2
-        //    dt2.Columns.Add("سعر الشراء");//3
-        //    DgvStore.DataSource = dt2;
-        //}
+        
         void ComboCategory()
         {
             Cmb_Category.DataSource = C.Select_ComboCategory();
@@ -91,39 +73,7 @@ namespace clothesStore.PL
             Cmb_Category.SelectedIndex = -1;
 
         }
-        //void ComboLargeUnit()
-        //{
-        //    Cmb_LargeUnit.DataSource = U.Select_ComboUnit();
-        //    Cmb_LargeUnit.DisplayMember = "Unit_Name";
-        //    Cmb_LargeUnit.ValueMember = "Unit_Id";
-        //    Cmb_LargeUnit.SelectedIndex = -1;
-
-        //}
-        //void ComboSmallUnit()
-        //{
-        //    Cmb_SmallUnit.DataSource = U.Select_ComboUnit();
-        //    Cmb_SmallUnit.DisplayMember = "Unit_Name";
-        //    Cmb_SmallUnit.ValueMember = "Unit_Id";
-        //    Cmb_SmallUnit.SelectedIndex = -1;
-
-        //}
-        //void Combo_Store()
-        //{
-        //    Cmb_Store.DataSource = S.Select_ComboStore();
-        //    Cmb_Store.DisplayMember = "Store_Name";
-        //    Cmb_Store.ValueMember = "Store_Id";
-        //    Cmb_Store.SelectedIndex = -1;
-
-        //}
-        //void Calc_AllQty()
-        //{
-        //    decimal total = 0;
-        //    for (int i = 0; i <= DgvStore.Rows.Count - 1; i++)
-        //    {
-        //        total += Convert.ToDecimal(DgvStore.Rows[i].Cells[2].Value);
-        //    }
-        //    Txt_Quantity.Text = total.ToString();
-        //}
+       
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             Frm_Category Frm_Cat = new Frm_Category();
@@ -451,17 +401,20 @@ namespace clothesStore.PL
                 //}
                 dt.Clear();
                 dt = P.VildateBarcode(Txt_Barcode.Text);
-
-
-                if (dt.Rows.Count > 0)
-
+                if (Txt_Barcode.Text!="")
                 {
-                    //textBox1.Text = dt.Rows[0][1].ToString();
-                    MessageBox.Show(" هذا الباركود مسجل مع  صنف أخر   ");
-                    Txt_Barcode.Focus();
-                    Txt_Barcode.SelectAll();
-                    return;
+
+                    if (dt.Rows.Count > 0)
+
+                    {
+                        //textBox1.Text = dt.Rows[0][1].ToString();
+                        MessageBox.Show(" هذا الباركود مسجل مع  صنف أخر   ");
+                        Txt_Barcode.Focus();
+                        Txt_Barcode.SelectAll();
+                        return;
+                    }
                 }
+
                 if (Convert.ToDecimal(Txt_PhurshasingPrice.Text) > Convert.ToDecimal(Txt_SellPrice.Text))
                 {
                     MessageBox.Show(" لا بد ان يكون سعر الشراء أقل من سعر البيع لعدم حدوث خسارة");
@@ -487,18 +440,19 @@ namespace clothesStore.PL
                     //CrateBarcode();
 
 
-                    P.addproudect(txtProName.Text, Convert.ToInt32(Cmb_Category.SelectedValue),
-                        decimal.Parse(Txt_Quantity.Text), decimal.Parse(Txt_SellPrice.Text),
-                        Convert.ToDecimal(Txt_PhurshasingPrice.Text), Convert.ToDecimal(Txt_minimun.Text),
-                        (Txt_Color.Text), Convert.ToInt32(Txt_Barcode.Text));
+                    dt.Clear();
+
+                    dt = P.addproudect(txtProName.Text, Convert.ToInt32(Cmb_Category.SelectedValue),
+                          decimal.Parse(Txt_Quantity.Text), decimal.Parse(Txt_SellPrice.Text),
+                          Convert.ToDecimal(Txt_PhurshasingPrice.Text), Convert.ToDecimal(Txt_minimun.Text),
+                          (Txt_Color.Text), (Txt_Barcode.Text), "true");
+                    int id_Product = Convert.ToInt32(dt.Rows[0][0]);
                     txtID.Text = P.Last_IdProd().Rows[0][0].ToString();
 
-                    S.Add_StoreProduct(Convert.ToInt32(txtID.Text), Convert.ToDecimal(Txt_PhurshasingPrice.Text));
-
-
+                    S.Add_StoreProduct(id_Product, Convert.ToDecimal(Txt_PhurshasingPrice.Text), DateTime.Now);
                     MessageBox.Show("تم اضافه الصنف بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                clear();
-                gridControl1.DataSource = P.selectProudect();
+                    clear();
+                    gridControl1.DataSource = P.selectProudect();
                     Txt_Barcode.Enabled = true;
 
 
@@ -548,19 +502,19 @@ namespace clothesStore.PL
                 //    txtProName.Focus();
                 //    return;
                 //}
-                //dt.Clear();
-                //dt = P.VildateBarcode(Txt_Barcode.Text);
+                dt.Clear();
+                dt = P.VildateBarcodeinUpdateproduct(Convert.ToInt32(txtID.Text),Txt_Barcode.Text);
 
 
-                //if (dt.Rows.Count > 1)
+                if (dt.Rows.Count > 0)
 
-                //{
-                //    //textBox1.Text = dt.Rows[0][1].ToString();
-                //    MessageBox.Show(" هذا الباركود مسجل مع  صنف أخر   ");
-                //    Txt_Barcode.Focus();
-                //    Txt_Barcode.SelectAll();
-                //    return;
-                //}
+                {
+                    //textBox1.Text = dt.Rows[0][1].ToString();
+                    MessageBox.Show(" هذا الباركود مسجل مع  صنف أخر   ");
+                    Txt_Barcode.Focus();
+                    Txt_Barcode.SelectAll();
+                    return;
+                }
                 if (txtProName.Text == "")
                 {
                     MessageBox.Show("يرجي التاكد من اسم المنتج");
@@ -579,18 +533,19 @@ namespace clothesStore.PL
                     Cmb_Category.Focus();
                     return;
                 }
-                //dt3.Clear();
-                //dt3 = S.Validate_ProductStore(Convert.ToInt32(txtID.Text),
-                //    Convert.ToDecimal(Txt_PhurshasingPrice.Text));
+                dt3.Clear();
+                dt3 = S.Validate_ProductStore(Convert.ToInt32(txtID.Text),
+                    Convert.ToDecimal(Txt_PhurshasingPrice.Text));
 
-                //if (dt3.Rows.Count > 0)
-                //{
+                if (dt3.Rows.Count > 0)
+                {
 
-                S.Update_StoreProduct(Convert.ToInt32(txtID.Text),
-                 Convert.ToDecimal(Txt_PhurshasingPrice.Text), Convert.ToDecimal(gridView1.GetFocusedRowCellValue("سعر الشراء")));
+                    S.Update_ProductBuyPrice(Convert.ToInt32(txtID.Text),
+                     Convert.ToDecimal(Txt_PhurshasingPrice.Text),
+                     Convert.ToDecimal(gridView1.GetFocusedRowCellValue("سعر الشراء")));
 
-                //}
-
+                }
+                
                 if (MessageBox.Show("هل تريد تعديل الصنف", "عمليه التعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     P.Updateproudect(Convert.ToInt32(txtID.Text), txtProName.Text, Convert.ToInt32(Cmb_Category.SelectedValue),
@@ -609,7 +564,7 @@ namespace clothesStore.PL
                 Txt_PhurshasingPrice.Enabled = true;
                 Btn_save.Enabled = true;
                 btn_Update.Enabled = false;
-                Btn_Delete.Enabled = false;
+              //  Btn_Delete.Enabled = false;
                 Txt_Quantity.Enabled = true;
                 Txt_Barcode.Enabled = true;
 
@@ -753,71 +708,66 @@ namespace clothesStore.PL
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
-            try
-            {
-                if (gridView1.RowCount > 0)
-                {
-                    txtID.Text = gridView1.GetFocusedRowCellValue("رقم الصنف").ToString();
-                    Cmb_Category.Text = gridView1.GetFocusedRowCellValue("التصنيف").ToString();
-                    txtProName.Text = gridView1.GetFocusedRowCellValue("إسم الصنف").ToString();
-                    Txt_PhurshasingPrice.Text = gridView1.GetFocusedRowCellValue("سعر الشراء").ToString();
-                    Txt_SellPrice.Text = gridView1.GetFocusedRowCellValue("سعر البيع").ToString();
-                    Txt_minimun.Text = gridView1.GetFocusedRowCellValue("الحد الادنى").ToString();
-                    Txt_Quantity.Text = Convert.ToInt32(gridView1.GetFocusedRowCellValue("الكمية")).ToString();
-                    Txt_Color.Text = gridView1.GetFocusedRowCellValue("اللون").ToString();
-                    Txt_Barcode.Text = gridView1.GetFocusedRowCellValue("رقم الباركود").ToString();
+            //try
+            //{
+            //    if (gridView1.RowCount > 0)
+            //    {
+            //        txtID.Text = gridView1.GetFocusedRowCellValue("رقم الصنف").ToString();
+            //        Cmb_Category.Text = gridView1.GetFocusedRowCellValue("التصنيف").ToString();
+            //        txtProName.Text = gridView1.GetFocusedRowCellValue("إسم الصنف").ToString();
+            //        Txt_PhurshasingPrice.Text = gridView1.GetFocusedRowCellValue("سعر الشراء").ToString();
+            //        Txt_SellPrice.Text = gridView1.GetFocusedRowCellValue("سعر البيع").ToString();
+            //        Txt_minimun.Text = gridView1.GetFocusedRowCellValue("الحد الادنى").ToString();
+            //        Txt_Quantity.Text = Convert.ToInt32(gridView1.GetFocusedRowCellValue("الكمية")).ToString();
+            //        Txt_Color.Text = gridView1.GetFocusedRowCellValue("اللون").ToString();
+            //        Txt_Barcode.Text = gridView1.GetFocusedRowCellValue("رقم الباركود").ToString();
 
-                    //Txt_PhurshasingPrice.Enabled = false;
-                    Btn_save.Enabled = false;
-                    btn_Update.Enabled = true;
-                    Btn_Delete.Enabled = true;
-                    Txt_Quantity.Enabled = false;
-                    Txt_Barcode.Enabled = false;
+            //        //Txt_PhurshasingPrice.Enabled = false;
+            //        Btn_save.Enabled = false;
+            //        btn_Update.Enabled = true;
+            //        Btn_Delete.Enabled = true;
+            //        Txt_Quantity.Enabled = false;
+            //        Txt_Barcode.Enabled = false;
                    
-                    Btn_New.Show();
-                }
-            }
-            catch (Exception )
-            {
-                return;
-                //MessageBox.Show(ex.Message);
-                //MessageBox.Show(ex.StackTrace);
-            }
+            //        Btn_New.Show();
+            //    }
+            //}
+            //catch (Exception )
+            //{
+            //    return;
+            //    //MessageBox.Show(ex.Message);
+            //    //MessageBox.Show(ex.StackTrace);
+            //}
         }
 
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
             try
             {
-              
-
-                if (MessageBox.Show("هل تريد حذف الصنف", "عمليه حذف صنف", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                if (MessageBox.Show("هل تريد حذف كل الاصناف", "عمليه حذف كل الاصناف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    P.deleteProudect(Convert.ToInt32(txtID.Text));
-
-
-                    MessageBox.Show("تم حذف الصنف بنجاح");
+                    P.deleteAllProudect();
+                    MessageBox.Show("تم حذف كل الاصناف بنجاح");
                 }
                 else
                 {
                     MessageBox.Show("تم الغاء عمليه الحذف");
                 }
+
                 gridControl1.DataSource = P.selectProudect();
                 clear();
                 Btn_save.Enabled = true;
                 Txt_PhurshasingPrice.Enabled = true;
 
                 btn_Update.Enabled = false;
-                Btn_Delete.Enabled = false;
+            
                 Txt_Quantity.Enabled = true;
-
-
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-               
+
             }
         }
 
@@ -882,6 +832,79 @@ namespace clothesStore.PL
         private void txtID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void repositoryItemButtonEdit1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+          
+        }
+
+        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            if (e.Column.Caption== "تعديل الصنف")
+            {
+                try
+                {
+                    if (gridView1.RowCount > 0)
+                    {
+                        txtID.Text = gridView1.GetFocusedRowCellValue("رقم الصنف").ToString();
+                        Cmb_Category.Text = gridView1.GetFocusedRowCellValue("التصنيف").ToString();
+                        txtProName.Text = gridView1.GetFocusedRowCellValue("إسم الصنف").ToString();
+                        Txt_PhurshasingPrice.Text = gridView1.GetFocusedRowCellValue("سعر الشراء").ToString();
+                        Txt_SellPrice.Text = gridView1.GetFocusedRowCellValue("سعر البيع").ToString();
+                        Txt_minimun.Text = gridView1.GetFocusedRowCellValue("الحد الادنى").ToString();
+                        Txt_Quantity.Text = Convert.ToInt32(gridView1.GetFocusedRowCellValue("الكمية")).ToString();
+                        Txt_Color.Text = gridView1.GetFocusedRowCellValue("اللون").ToString();
+                        Txt_Barcode.Text = gridView1.GetFocusedRowCellValue("رقم الباركود").ToString();
+
+                        Btn_save.Enabled = false;
+                        btn_Update.Enabled = true;
+                        Txt_Quantity.Enabled = false;
+                        Btn_New.Show();
+                    }
+                }
+                catch (Exception)
+                {
+                    return;
+                    //MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.StackTrace);
+                }
+            }
+            if (e.Column.Caption== "مسح الصنف")
+            {
+                try
+                {
+
+
+                    if (MessageBox.Show("هل تريد حذف الصنف", "عمليه حذف صنف", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    {
+                        P.deleteProudect(Convert.ToInt32(gridView1.GetFocusedRowCellValue("رقم الصنف")));
+                        MessageBox.Show("تم حذف الصنف بنجاح");
+                    }
+                    else
+                    {
+                        MessageBox.Show("تم الغاء عمليه الحذف");                    
+                    }
+
+                    gridControl1.DataSource = P.selectProudect();
+                    clear();
+                    Btn_save.Enabled = true;
+                    Txt_PhurshasingPrice.Enabled = true;
+                    btn_Update.Enabled = false;
+                    Txt_Quantity.Enabled = true;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+
+            }
         }
     }
 }

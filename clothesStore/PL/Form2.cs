@@ -238,8 +238,8 @@ namespace clothesStore.PL
                     if (dt4.Rows.Count == 0)
                     {
 
-                        Store.Add_StoreProduct(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
-                         Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value));
+                        //Store.Add_StoreProduct(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
+                        // Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value));
 
                     }
                         //else if (dt4.Rows.Count>0)

@@ -205,6 +205,8 @@
             this.barCheckItem3 = new DevExpress.XtraBars.BarCheckItem();
             this.barCheckItem4 = new DevExpress.XtraBars.BarCheckItem();
             this.barCheckItem5 = new DevExpress.XtraBars.BarCheckItem();
+            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.Ribon_ProductManagement = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Ribon_AddProduct = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -237,6 +239,7 @@
             this.Ribon_Masrofat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_StockDepartment = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_ReportStock = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Ribon_Files = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Ribon_BackUp = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -285,8 +288,6 @@
             this.tileI_ReturnOrder = new DevExpress.XtraEditors.TileItem();
             this.tileI_Reb7 = new DevExpress.XtraEditors.TileItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barAndDockingController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -378,10 +379,11 @@
             this.barCheckItem3,
             this.barCheckItem4,
             this.barCheckItem5,
-            this.barButtonItem15});
+            this.barButtonItem15,
+            this.barButtonItem17});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ribbon.MaxItemId = 90;
+            this.ribbon.MaxItemId = 91;
             this.ribbon.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -1802,6 +1804,44 @@
             this.barCheckItem5.Id = 88;
             this.barCheckItem5.Name = "barCheckItem5";
             // 
+            // barButtonItem15
+            // 
+            this.barButtonItem15.Caption = "استلام نقدية";
+            this.barButtonItem15.Id = 89;
+            this.barButtonItem15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
+            this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
+            this.barButtonItem15.ItemAppearance.Normal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem15.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem15.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem15.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem15.Name = "barButtonItem15";
+            this.barButtonItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick_1);
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "حركة شراء صنف";
+            this.barButtonItem17.Id = 90;
+            this.barButtonItem17.ImageOptions.Image = global::clothesStore.Properties.Resources.boorderitem_16x16;
+            this.barButtonItem17.ImageOptions.LargeImage = global::clothesStore.Properties.Resources.boorderitem_32x32;
+            this.barButtonItem17.ItemAppearance.Disabled.Font = new System.Drawing.Font("Arial", 12F);
+            this.barButtonItem17.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem17.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.barButtonItem17.ItemAppearance.Disabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem17.ItemAppearance.Hovered.Font = new System.Drawing.Font("Arial", 12F);
+            this.barButtonItem17.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem17.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.barButtonItem17.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem17.ItemAppearance.Normal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem17.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem17.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.barButtonItem17.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem17.ItemAppearance.Pressed.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem17.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem17.ItemAppearance.Pressed.Options.UseTextOptions = true;
+            this.barButtonItem17.ItemAppearance.Pressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.barButtonItem17.Name = "barButtonItem17";
+            this.barButtonItem17.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem17_ItemClick_2);
+            // 
             // ribbonMiniToolbar1
             // 
             this.ribbonMiniToolbar1.ParentControl = this;
@@ -1836,6 +1876,7 @@
             this.Ribon_ReportProduct.ItemLinks.Add(this.Btn_RepAdjustmentbalance);
             this.Ribon_ReportProduct.ItemLinks.Add(this.Bnt_Minimum);
             this.Ribon_ReportProduct.ItemLinks.Add(this.btn_HarkaItems);
+            this.Ribon_ReportProduct.ItemLinks.Add(this.barButtonItem17);
             this.Ribon_ReportProduct.Name = "Ribon_ReportProduct";
             this.Ribon_ReportProduct.Text = "تقارير الاصناف";
             // 
@@ -2033,6 +2074,12 @@
             this.Ribon_ReportStock.ItemLinks.Add(this.Btn_ReportPullStock);
             this.Ribon_ReportStock.Name = "Ribon_ReportStock";
             this.Ribon_ReportStock.Text = "تقارير الخزنة";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem15);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
             // 
             // Ribon_Files
             // 
@@ -2916,7 +2963,6 @@
             // 
             // tileI_ManagmentOrder
             // 
-            this.tileI_ManagmentOrder.CurrentFrameIndex = 1;
             tileItemElement19.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileItemElement19.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
             tileItemElement19.Text = "ادارة المبيعات";
@@ -3013,7 +3059,6 @@
             // 
             // tileI_MineItem
             // 
-            this.tileI_MineItem.CurrentFrameIndex = 1;
             tileItemElement26.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileItemElement26.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
             tileItemElement26.Text = "حد الطلب من المنتجات";
@@ -3098,7 +3143,6 @@
             // 
             // tileI_Reb7
             // 
-            this.tileI_Reb7.CurrentFrameIndex = 1;
             tileItemElement33.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileItemElement33.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
             tileItemElement33.Text = "تقرير ارباح المبيعات";
@@ -3139,25 +3183,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem15);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
-            // 
-            // barButtonItem15
-            // 
-            this.barButtonItem15.Caption = "استلام نقدية";
-            this.barButtonItem15.Id = 89;
-            this.barButtonItem15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
-            this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
-            this.barButtonItem15.ItemAppearance.Normal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barButtonItem15.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem15.ItemAppearance.Normal.Options.UseTextOptions = true;
-            this.barButtonItem15.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.barButtonItem15.Name = "barButtonItem15";
-            this.barButtonItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick_1);
             // 
             // Frm_Main
             // 
@@ -3359,5 +3384,6 @@
         public DevExpress.XtraEditors.TileItem tileI_ManagmentOrder;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
     }
 }

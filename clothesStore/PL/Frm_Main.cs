@@ -487,5 +487,11 @@ namespace clothesStore.PL
             frm_RecieveMoney r = new frm_RecieveMoney();
             r.Show();
         }
+
+        private void barButtonItem17_ItemClick_2(object sender, ItemClickEventArgs e)
+        {
+            MoveProductMoshtryat moveProductMoshtryat = new MoveProductMoshtryat();
+            moveProductMoshtryat.Show();
+        }
     }
 }

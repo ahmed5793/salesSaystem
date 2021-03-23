@@ -12,17 +12,17 @@ namespace clothesStore.Bl
 {
      class Proudect
     {
-        internal void addproudect(String name,int ID_Category, decimal Quantity,decimal Sales_Price,
-                                  decimal Purshasing_Price,decimal minimun,string color,int Barcode)
+        internal DataTable addproudect(String name, int ID_Category, decimal Quantity, decimal Sales_Price,
+                                 decimal Purshasing_Price, decimal minimun, string color, string Barcode, string show)
         {
             DataAccessLayer da = new DataAccessLayer();
+            DataTable dt = new DataTable();
             da.open();
-            SqlParameter[] param = new SqlParameter[8];
-            param[0] = new SqlParameter("@Name_Prod", SqlDbType.NVarChar,150);
+            SqlParameter[] param = new SqlParameter[9];
+            param[0] = new SqlParameter("@Name_Prod", SqlDbType.NVarChar, 150);
             param[0].Value = name;
             param[1] = new SqlParameter("@Id_Category", SqlDbType.Int);
             param[1].Value = ID_Category;
-     
             param[2] = new SqlParameter("@Quantity", SqlDbType.Decimal);
             param[2].Value = Quantity;
             param[3] = new SqlParameter("@Sales_price", SqlDbType.Decimal);
@@ -31,13 +31,15 @@ namespace clothesStore.Bl
             param[4].Value = Purshasing_Price;
             param[5] = new SqlParameter("@minimum", SqlDbType.Decimal);
             param[5].Value = minimun;
-            param[6] = new SqlParameter("@Color", SqlDbType.NVarChar,50);
+            param[6] = new SqlParameter("@Color", SqlDbType.NVarChar, 50);
             param[6].Value = color;
-            param[7] = new SqlParameter("@Barcode", SqlDbType.BigInt);
+            param[7] = new SqlParameter("@Barcode", SqlDbType.NVarChar, 150);
             param[7].Value = Barcode;
-            da.excutequery("Addproudect", param);
+            param[8] = new SqlParameter("@show", SqlDbType.NVarChar, 50);
+            param[8].Value = show;
+            dt = da.selected("Addproudect", param);
             da.close();
-
+            return dt;
         }
         public DataTable selectProudect()
         {
@@ -126,7 +128,6 @@ namespace clothesStore.Bl
             da.close();
             return dt;
         }
-
         internal void deleteProudect(int id)
         {
             DataAccessLayer da = new DataAccessLayer();
@@ -135,6 +136,13 @@ namespace clothesStore.Bl
             param[0] = new SqlParameter("@id", SqlDbType.Int);
             param[0].Value = id;
             da.excutequery("deleteProudect", param);
+            da.close();
+        }
+        internal void deleteAllProudect()
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            da.open();          
+            da.excutequery("deleteAllProudect", null);
             da.close();
         }
         internal void Updateproudect(int Id_Prod ,String name, int ID_Category, decimal Sales_Price, decimal Buy_Price,
@@ -209,7 +217,15 @@ namespace clothesStore.Bl
             da.close();
             return dt;
         }
+        internal DataTable SelectMoveProductMoshtryat()
+        {
+            DataAccessLayer da = new DataAccessLayer();
 
+            DataTable dt = new DataTable();
+            dt = da.selected("SelectMoveProductMoshtryat", null);
+            da.close();
+            return dt;
+        }
         internal DataTable SearchMovePorduct(DateTime Date_From , DateTime Date_To)
         {
             DataAccessLayer da = new DataAccessLayer();
@@ -326,7 +342,7 @@ namespace clothesStore.Bl
             return dt;
 
         }
-        internal DataTable VildateBarcode(string ID)
+        internal DataTable VildateBarcode(string barcode)
         {
 
 
@@ -334,19 +350,29 @@ namespace clothesStore.Bl
 
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("@barcode", SqlDbType.NVarChar, 250);
-            param[0].Value = ID;
+            param[0].Value = barcode;
             DataTable dt = new DataTable();
             dt = da.selected("VildateBarcode", param);
             da.close();
             return dt;
 
         }
+        internal DataTable VildateBarcodeinUpdateproduct(int ID_product , string barcode)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@ID_Product", SqlDbType.Int);
+            param[0].Value = ID_product;
+            param[1] = new SqlParameter("@barcode", SqlDbType.NVarChar, 250);
+            param[1].Value = barcode;
+            DataTable dt = new DataTable();
+            dt = da.selected("VildateBarcodeinUpdateproduct", param);
+            da.close();
+            return dt;
+        }
         internal DataTable VildateUpdateBarcode(int id,string barcode)
         {
-
-
             DataAccessLayer da = new DataAccessLayer();
-
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@idprod", SqlDbType.Int);
             param[0].Value = id;

@@ -50,31 +50,33 @@ namespace clothesStore.Bl
             da.close();
             return dt;
         }
-        internal void Add_StoreProduct(int  Id_Product , decimal Buy_Price )
+        internal void Add_StoreProduct(int Id_Product, decimal Buy_Price, DateTime date)
         {
 
             DataAccessLayer da = new DataAccessLayer();
             da.open();
-            SqlParameter[] param = new SqlParameter[2];
+            SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@ID_Product", SqlDbType.Int);
             param[0].Value = Id_Product;
             param[1] = new SqlParameter("@Buy_price", SqlDbType.Decimal);
-            param[1].Value = Buy_Price;           
+            param[1].Value = Buy_Price;
+            param[2] = new SqlParameter("@date", SqlDbType.DateTime);
+            param[2].Value = date;
             da.excutequery("Add_StoreProduct", param);
             da.close();
         }
-        internal void Update_StoreProduct(int Id_Product, decimal New_Buy_Price , decimal Old_Buy_Price)
+        internal void Update_ProductBuyPrice(int Id_Product, decimal New_Buy_Price , decimal Old_Buy_Price)
         {
             DataAccessLayer da = new DataAccessLayer();
             da.open();
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@ID_Product", SqlDbType.Int);
             param[0].Value = Id_Product;
-            param[1] = new SqlParameter("@NewBuy_price", SqlDbType.Decimal);
+            param[1] = new SqlParameter("@BuyPrice", SqlDbType.Decimal);
             param[1].Value = New_Buy_Price;
-            param[2] = new SqlParameter("@old_BuyPrice", SqlDbType.Decimal);
+            param[2] = new SqlParameter("@oldBuyPrice", SqlDbType.Decimal);
             param[2].Value = Old_Buy_Price;
-            da.excutequery("Update_StoreProduct", param);
+            da.excutequery("Update_ProductBuyPrice", param);
             da.close();
         }
         internal void Delete_StoreProduct(int Id_Product, int Id_Store, decimal Quantity)

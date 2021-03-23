@@ -635,6 +635,12 @@
     <Compile Include="PL\Frm_EditUnit.Designer.cs">
       <DependentUpon>Frm_EditUnit.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Login.designer.cs">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_LoginMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -833,6 +839,12 @@
     <Compile Include="PL\Frm_Unit.Designer.cs">
       <DependentUpon>Frm_Unit.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\MoveProductMoshtryat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\MoveProductMoshtryat.Designer.cs">
+      <DependentUpon>MoveProductMoshtryat.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\OrderSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1020,6 +1032,9 @@
     <EmbeddedResource Include="PL\Frm_EditUnit.resx">
       <DependentUpon>Frm_EditUnit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Login.resx">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_LoginMain.resx">
       <DependentUpon>Frm_LoginMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -1119,6 +1134,9 @@
     <EmbeddedResource Include="PL\Frm_Unit.resx">
       <DependentUpon>Frm_Unit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\MoveProductMoshtryat.resx">
+      <DependentUpon>MoveProductMoshtryat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\OrderSales.resx">
       <DependentUpon>OrderSales.cs</DependentUpon>
     </EmbeddedResource>
@@ -1209,139 +1227,149 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Paomedia-Small-N-Flat-Shop.ico" />
+    <None Include="Resources\boorderitem_32x32.png" />
+    <None Include="Resources\boorderitem_16x16.png" />
     <Content Include="Resources\CLOSE.png" />
+    <None Include="Resources\deletedatasource.svg" />
+    <None Include="Resources\deletedatasource1.svg" />
+    <None Include="Resources\deletedatasource_32x32.png" />
+    <None Include="Resources\deletedatasource_32x321.png" />
+    <None Include="Resources\deletedatasource_32x322.png" />
+    <None Include="Resources\deletedatasource_32x323.png" />
     <Content Include="Resources\images.jpg" />
     <Content Include="Resources\mesa2.jpg" />
+    <None Include="Resources\up.svg" />
+    <None Include="Resources\updatedataextract.svg" />
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="CrystalDecisions.ReportAppServer.ClientDoc">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.CommLayer">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.CommonControls">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.Controllers">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.CubeDefModel">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.DataDefModel">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.DataSetConversion">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.ObjectFactory">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.Prompting">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.ReportDefModel">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.XmlSerialize">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="log4net">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
