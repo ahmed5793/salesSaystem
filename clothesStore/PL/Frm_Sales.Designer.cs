@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Sales));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Cmb_Category = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_barcode = new System.Windows.Forms.TextBox();
             this.txt_sales = new System.Windows.Forms.TextBox();
@@ -74,6 +76,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.Cmb_Category);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txt_barcode);
             this.groupBox1.Controls.Add(this.txt_sales);
@@ -94,11 +98,40 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(5, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1037, 178);
+            this.groupBox1.Size = new System.Drawing.Size(1038, 226);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات الفاتورة";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.YellowGreen;
+            this.label9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(980, 116);
+            this.label9.Name = "label9";
+            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label9.Size = new System.Drawing.Size(39, 18);
+            this.label9.TabIndex = 69;
+            this.label9.Text = "الفئات";
+            // 
+            // Cmb_Category
+            // 
+            this.Cmb_Category.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Cmb_Category.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.Cmb_Category.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Cmb_Category.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cmb_Category.FormattingEnabled = true;
+            this.Cmb_Category.Location = new System.Drawing.Point(703, 108);
+            this.Cmb_Category.Name = "Cmb_Category";
+            this.Cmb_Category.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Cmb_Category.Size = new System.Drawing.Size(246, 26);
+            this.Cmb_Category.TabIndex = 68;
+            this.Cmb_Category.SelectionChangeCommitted += new System.EventHandler(this.Cmb_Category_SelectionChangeCommitted);
+            this.Cmb_Category.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmb_Category_KeyDown);
             // 
             // label6
             // 
@@ -106,7 +139,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Yellow;
             this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(954, 147);
+            this.label6.Location = new System.Drawing.Point(582, 196);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 18);
             this.label6.TabIndex = 67;
@@ -116,7 +149,7 @@
             // 
             this.txt_barcode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_barcode.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_barcode.Location = new System.Drawing.Point(702, 143);
+            this.txt_barcode.Location = new System.Drawing.Point(330, 193);
             this.txt_barcode.Multiline = true;
             this.txt_barcode.Name = "txt_barcode";
             this.txt_barcode.Size = new System.Drawing.Size(246, 27);
@@ -152,7 +185,7 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(657, 97);
+            this.simpleButton1.Location = new System.Drawing.Point(658, 142);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(39, 36);
             this.simpleButton1.TabIndex = 65;
@@ -165,7 +198,7 @@
             this.label8.BackColor = System.Drawing.Color.Yellow;
             this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(966, 107);
+            this.label8.Location = new System.Drawing.Point(966, 157);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label8.Size = new System.Drawing.Size(65, 18);
@@ -179,7 +212,7 @@
             this.Cmb_product.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Cmb_product.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cmb_product.FormattingEnabled = true;
-            this.Cmb_product.Location = new System.Drawing.Point(702, 103);
+            this.Cmb_product.Location = new System.Drawing.Point(703, 149);
             this.Cmb_product.Name = "Cmb_product";
             this.Cmb_product.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Cmb_product.Size = new System.Drawing.Size(246, 26);
@@ -193,7 +226,7 @@
             this.label7.BackColor = System.Drawing.Color.Yellow;
             this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(991, 69);
+            this.label7.Location = new System.Drawing.Point(980, 69);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(40, 18);
@@ -208,7 +241,7 @@
             this.cmb_Stock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Stock.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Stock.FormattingEnabled = true;
-            this.cmb_Stock.Location = new System.Drawing.Point(702, 66);
+            this.cmb_Stock.Location = new System.Drawing.Point(703, 66);
             this.cmb_Stock.Name = "cmb_Stock";
             this.cmb_Stock.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_Stock.Size = new System.Drawing.Size(246, 26);
@@ -221,7 +254,7 @@
             this.Btn_AddCustomer.BackColor = System.Drawing.Color.Black;
             this.Btn_AddCustomer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_AddCustomer.ForeColor = System.Drawing.Color.White;
-            this.Btn_AddCustomer.Location = new System.Drawing.Point(633, 24);
+            this.Btn_AddCustomer.Location = new System.Drawing.Point(634, 24);
             this.Btn_AddCustomer.Name = "Btn_AddCustomer";
             this.Btn_AddCustomer.Size = new System.Drawing.Size(63, 31);
             this.Btn_AddCustomer.TabIndex = 55;
@@ -298,7 +331,7 @@
             this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(702, 27);
+            this.comboBox1.Location = new System.Drawing.Point(703, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(246, 26);
@@ -311,7 +344,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Yellow;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(967, 32);
+            this.label1.Location = new System.Drawing.Point(968, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 18);
             this.label1.TabIndex = 48;
@@ -323,9 +356,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.DgvSale);
-            this.groupBox2.Location = new System.Drawing.Point(5, 191);
+            this.groupBox2.Location = new System.Drawing.Point(5, 241);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1037, 251);
+            this.groupBox2.Size = new System.Drawing.Size(1038, 272);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات أصناف الفاتورة";
@@ -341,31 +374,31 @@
             this.DgvSale.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvSale.BackgroundColor = System.Drawing.Color.White;
             this.DgvSale.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvSale.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvSale.DefaultCellStyle = dataGridViewCellStyle3;
             this.DgvSale.Location = new System.Drawing.Point(6, 25);
             this.DgvSale.Name = "DgvSale";
             this.DgvSale.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvSale.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvSale.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvSale.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.DgvSale.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Blue;
             this.DgvSale.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.DgvSale.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Blue;
             this.DgvSale.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvSale.Size = new System.Drawing.Size(1024, 220);
+            this.DgvSale.Size = new System.Drawing.Size(1025, 241);
             this.DgvSale.TabIndex = 46;
             this.DgvSale.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSale_CellClick);
             this.DgvSale.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgvSale_RowsRemoved);
@@ -375,7 +408,7 @@
             this.lblItemsCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblItemsCount.AutoSize = true;
             this.lblItemsCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblItemsCount.Location = new System.Drawing.Point(125, 462);
+            this.lblItemsCount.Location = new System.Drawing.Point(125, 533);
             this.lblItemsCount.Name = "lblItemsCount";
             this.lblItemsCount.Size = new System.Drawing.Size(23, 21);
             this.lblItemsCount.TabIndex = 59;
@@ -388,7 +421,7 @@
             this.label13.BackColor = System.Drawing.Color.Yellow;
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(5, 462);
+            this.label13.Location = new System.Drawing.Point(5, 533);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(114, 21);
             this.label13.TabIndex = 58;
@@ -403,7 +436,7 @@
             this.groupBox3.Controls.Add(this.txt_pay);
             this.groupBox3.Controls.Add(this.txt_mark);
             this.groupBox3.Controls.Add(this.lable2);
-            this.groupBox3.Location = new System.Drawing.Point(659, 448);
+            this.groupBox3.Location = new System.Drawing.Point(660, 519);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.groupBox3.Size = new System.Drawing.Size(380, 156);
@@ -547,7 +580,7 @@
             this.btn_new.AppearancePressed.Options.UseFont = true;
             this.btn_new.AppearancePressed.Options.UseForeColor = true;
             this.btn_new.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_new.ImageOptions.Image")));
-            this.btn_new.Location = new System.Drawing.Point(39, 553);
+            this.btn_new.Location = new System.Drawing.Point(39, 624);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(176, 36);
             this.btn_new.TabIndex = 73;
@@ -581,7 +614,7 @@
             this.btn_save.AppearancePressed.Options.UseTextOptions = true;
             this.btn_save.AppearancePressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.Image")));
-            this.btn_save.Location = new System.Drawing.Point(234, 553);
+            this.btn_save.Location = new System.Drawing.Point(234, 624);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(140, 36);
             this.btn_save.TabIndex = 74;
@@ -631,7 +664,7 @@
             this.Btn_Print.AppearancePressed.Options.UseTextOptions = true;
             this.Btn_Print.AppearancePressed.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.Btn_Print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Print.ImageOptions.Image")));
-            this.Btn_Print.Location = new System.Drawing.Point(397, 553);
+            this.Btn_Print.Location = new System.Drawing.Point(397, 624);
             this.Btn_Print.Name = "Btn_Print";
             this.Btn_Print.Size = new System.Drawing.Size(147, 36);
             this.Btn_Print.TabIndex = 75;
@@ -648,7 +681,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
-            this.ClientSize = new System.Drawing.Size(1046, 609);
+            this.ClientSize = new System.Drawing.Size(1047, 680);
             this.Controls.Add(this.Btn_Print);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_new);
@@ -717,5 +750,7 @@
         public DevExpress.XtraEditors.SimpleButton Btn_Print;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txt_barcode;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.ComboBox Cmb_Category;
     }
 }

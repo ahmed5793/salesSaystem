@@ -659,6 +659,18 @@ namespace clothesStore.Bl
             return dt;
         }
 
+        internal DataTable Select_ProductFormCategory(int idcategory)
+        {
+            DataAccessLayer da = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@idcategory", SqlDbType.Int);
+            param[0].Value = idcategory;
+            DataTable dt = new DataTable();
+            dt = da.selected("Select_ProductFormCategory", param);
+            da.close();
+            return dt;
+        }
+
     }
 }
 
