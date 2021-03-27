@@ -774,9 +774,20 @@ namespace clothesStore.PL
         {
             try
             {
-                Cmb_product.DataSource = p.Select_ProductFormCategory(Convert.ToInt32(Cmb_Category.SelectedValue));
-                Cmb_product.DisplayMember = "Name_Prod";
-                Cmb_product.ValueMember = "ID_Prod";
+                dt5.Clear();
+                dt5 = p.Select_ProductFormCategory(Convert.ToInt32(Cmb_Category.SelectedValue));
+                if (dt5.Rows.Count>0)
+                {
+
+
+                 Cmb_product.DataSource = p.Select_ProductFormCategory(Convert.ToInt32(Cmb_Category.SelectedValue));
+                    Cmb_product.DisplayMember = "Name_Prod";
+                    Cmb_product.ValueMember = "ID_Prod";
+                }
+                else
+                {
+                    Cmb_product.DataSource = null;
+                }
             }
             catch (Exception ex)
             {
