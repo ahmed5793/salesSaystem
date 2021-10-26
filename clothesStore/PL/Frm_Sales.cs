@@ -26,7 +26,7 @@ namespace clothesStore.PL
             InitializeComponent();
             ComboCustomer();
             ComboStock();
-            ComboProduct();
+           // ComboProduct();
             SelectdataTable();
             //rezizse();
             txt_sales.Text = Program.salesman;
@@ -222,9 +222,19 @@ namespace clothesStore.PL
                 MessageBox.Show(ex.StackTrace);
             }
         }
-
-        private void Frm_Sales_Load(object sender, EventArgs e)
+        Category C = new Category();
+        void ComboCategory()
         {
+            Cmb_Category.DataSource = C.Select_ComboCategory();
+            Cmb_Category.DisplayMember = "Category_Name";
+            Cmb_Category.ValueMember = "Category_Id";
+         ///   Cmb_Category.SelectedIndex = -1;
+
+        }
+        private void Frm_Sales_Load(object sender, EventArgs e)
+        { 
+
+            ComboCategory();
             //label6.Hide();
             //txt_barcode.Hide();
         }
@@ -758,6 +768,59 @@ namespace clothesStore.PL
             if (txt_pay.Text=="0")
             {
                 txt_pay.Text = "";
+            }
+        }
+        void selectproudectfromcategory()
+        {
+            try
+            {
+                dt5.Clear();
+                dt5 = p.Select_ProductFormCategory(Convert.ToInt32(Cmb_Category.SelectedValue));
+                if (dt5.Rows.Count>0)
+                {
+
+
+                 Cmb_product.DataSource = p.Select_ProductFormCategory(Convert.ToInt32(Cmb_Category.SelectedValue));
+                    Cmb_product.DisplayMember = "Name_Prod";
+                    Cmb_product.ValueMember = "ID_Prod";
+                }
+                else
+                {
+                    Cmb_product.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void Cmb_Category_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            try
+            {
+                selectproudectfromcategory();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message) ;
+            }
+        }
+
+        private void Cmb_Category_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                try
+                {
+                    selectproudectfromcategory();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

@@ -39,5 +39,10 @@ namespace clothesStore.PL
             dataGridView1.DataSource = null;
             this.Close();
         }
+
+        private void FormListSuppliers_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
