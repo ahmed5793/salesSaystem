@@ -1146,7 +1146,6 @@ E:\workss\Clothes\EasySystem\salesSaystem\clothesStore\obj\Debug\clothesStore.Rp
 E:\workss\Clothes\EasySystem\salesSaystem\clothesStore\obj\Debug\clothesStore.Rpt.Frm_RptDocumetViewer.resources
 E:\workss\Clothes\EasySystem\salesSaystem\clothesStore\obj\Debug\clothesStore.Rpt.Rpt_Order.resources
 E:\workss\Clothes\EasySystem\salesSaystem\clothesStore\obj\Debug\SmartSales.csproj.GenerateResource.cache
-E:\workss\Clothes\EasySystem\salesSaystem\clothesStore\obj\Debug\clothesStore.exe.licenses
 E:\workss\Clothes\EasySystem\salesSaystem\clothesStore\obj\Debug\SmartSales.csproj.CoreCompileInputs.cache
 E:\workss\Clothes\EasySystem\salesSaystem\clothesStore\obj\Debug\clothesStore.exe.manifest
 E:\workss\Clothes\EasySystem\salesSaystem\clothesStore\obj\Debug\clothesStore.application
